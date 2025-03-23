@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/',  // Isko ensure karo
+  base: '/admin',  // Isko ensure karo
 });
