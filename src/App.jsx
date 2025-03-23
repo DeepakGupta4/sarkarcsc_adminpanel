@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./Components/Dashboard";
 import AddJob from "./Components/Jobs/Addjob";
 import ServiceList from "./Components/Services/Addservice";
@@ -11,14 +11,17 @@ import ProtectedRoute from "./Middleware/ProtectionRoute";
 
 const App = () => {
   return (
-    <Router basename="/admin">  {/* ✅ Basename add kiya */}
+    <Router>
       <Routes>
+        {/* Default Redirect: Root "/" goes to "/admin/login" */}
+        <Route path="/" element={<Navigate to="/admin/login" replace />} />
+
         {/* Public Routes */}
-        <Route path="/login" element={<Login />} />
+        <Route path="/admin/login" element={<Login />} />
 
         {/* Protected Routes */}
         <Route
-          path="/"
+          path="/admin/dashboard"
           element={
             <ProtectedRoute>
               <Dashboard />
@@ -26,7 +29,7 @@ const App = () => {
           }
         />
         <Route
-          path="/jobs"
+          path="/admin/jobs"
           element={
             <ProtectedRoute>
               <AdminJobs />
@@ -34,7 +37,7 @@ const App = () => {
           }
         />
         <Route
-          path="/add-job"
+          path="/admin/add-job"
           element={
             <ProtectedRoute>
               <AddJob />
@@ -42,7 +45,7 @@ const App = () => {
           }
         />
         <Route
-          path="/services"
+          path="/admin/services"
           element={
             <ProtectedRoute>
               <ServiceList />
@@ -50,7 +53,7 @@ const App = () => {
           }
         />
         <Route
-          path="/job-applications"
+          path="/admin/job-applications"
           element={
             <ProtectedRoute>
               <Jobapplication />
@@ -58,13 +61,16 @@ const App = () => {
           }
         />
         <Route
-          path="/total-jobs"
+          path="/admin/total-jobs"
           element={
             <ProtectedRoute>
               <TotalJobs />
             </ProtectedRoute>
           }
         />
+
+        {/* Fallback Route (Unknown paths redirect to login) */}
+        <Route path="*" element={<Navigate to="/admin/login" replace />} />
       </Routes>
     </Router>
   );
