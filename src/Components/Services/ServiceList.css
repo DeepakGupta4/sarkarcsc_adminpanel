@@ -1,0 +1,105 @@
+/* Container */
+.csc-admin-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #000;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header */
+  .csc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #003366;
+    color: white;  /* ✅ Text color white for better visibility */
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  
+  .csc-title {
+    margin: 0;
+    font-size: 22px;
+  }
+  
+  .csc-back-button {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Service Cards */
+  .csc-services-list {
+    margin-top: 20px;
+  }
+  
+  .csc-service-card {
+    background: #3699d6;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .csc-service-content h3 {
+    margin: 0;
+    color: #003366;
+  }
+  
+  .csc-action-buttons {
+    margin-top: 10px;
+  }
+  
+  .csc-delete-btn, .csc-edit-btn, .csc-add-btn, .csc-save-btn, .csc-cancel-btn {
+    border: none;
+    padding: 8px 12px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .csc-delete-btn {
+    background: #e74c3c;
+    color: white;
+  }
+  
+  .csc-edit-btn {
+    background: #f39c12;
+    color: white;
+  }
+  
+  .csc-add-btn {
+    background: #2ecc71;
+    color: white;
+  }
+  
+  .csc-save-btn {
+    background: #3498db;
+    color: white;
+  }
+  
+  .csc-cancel-btn {
+    background: #95a5a6;
+    color: white;
+  }
+  
+  /* Add Service Form */
+  .csc-add-service {
+    margin-top: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .csc-add-service input, .csc-add-service textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
