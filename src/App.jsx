@@ -11,14 +11,14 @@ import ProtectedRoute from "./Middleware/ProtectionRoute";
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/admin">  {/* ✅ Basename add kiya */}
       <Routes>
         {/* Public Routes */}
-        <Route path="/admin/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
 
-        {/* Protected Routes (Require Authentication) */}
+        {/* Protected Routes */}
         <Route
-          path="/admin"
+          path="/"
           element={
             <ProtectedRoute>
               <Dashboard />
@@ -26,7 +26,7 @@ const App = () => {
           }
         />
         <Route
-          path="/admin/jobs"
+          path="/jobs"
           element={
             <ProtectedRoute>
               <AdminJobs />
@@ -34,7 +34,7 @@ const App = () => {
           }
         />
         <Route
-          path="/admin/add-job"
+          path="/add-job"
           element={
             <ProtectedRoute>
               <AddJob />
@@ -42,7 +42,7 @@ const App = () => {
           }
         />
         <Route
-          path="/admin/services"
+          path="/services"
           element={
             <ProtectedRoute>
               <ServiceList />
@@ -50,7 +50,7 @@ const App = () => {
           }
         />
         <Route
-          path="/admin/job-applications"
+          path="/job-applications"
           element={
             <ProtectedRoute>
               <Jobapplication />
@@ -58,7 +58,7 @@ const App = () => {
           }
         />
         <Route
-          path="/admin/total-jobs"
+          path="/total-jobs"
           element={
             <ProtectedRoute>
               <TotalJobs />
