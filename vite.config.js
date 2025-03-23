@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/admin/',  // ✅ Base URL fix
+  base: '/admin/',  // ✅ Isse /admin route ke assets sahi load honge
 });
